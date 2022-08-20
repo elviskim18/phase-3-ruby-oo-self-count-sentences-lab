@@ -17,7 +17,10 @@ class String
   end
 
   def count_sentences
-    self.split(/[,.]\s*/).length()
+    delimiters = ['!', '.', "?"]
+    self.split(Regexp.union(delimiters)).size
+
+    #self.split(/[,.]\s*/).length()
 
   end
 end
